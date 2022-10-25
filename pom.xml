@@ -23,6 +23,7 @@
 
         <!-- Plugin versions -->
         <gmavenplus.plugin.version>2.0.0</gmavenplus.plugin.version>
+        <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
     </properties>
 
     <dependencies>
@@ -68,6 +69,17 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- Required so `mvnw clean test` picks up tests-->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test</include>
+                    </includes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
