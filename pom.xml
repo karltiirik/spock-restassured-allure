@@ -18,12 +18,12 @@
 
         <!-- Dependency versions -->
         <spock.version>2.3-groovy-4.0</spock.version>
-        <groovy.version>4.0.5</groovy.version>
+        <groovy.version>4.0.6</groovy.version>
         <rest-assured.version>5.2.0</rest-assured.version>
         <allure.version>2.19.0</allure.version>
 
         <!-- Plugin versions -->
-        <gmavenplus.plugin.version>2.0.0</gmavenplus.plugin.version>
+        <gmavenplus.plugin.version>2.1.0</gmavenplus.plugin.version>
         <maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
         <allure-maven.version>2.11.2</allure-maven.version>
         <aspectj.version>1.9.9.1</aspectj.version>
