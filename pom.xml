@@ -57,7 +57,7 @@
         <!-- Allure -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
+            <artifactId>allure-spock2</artifactId>
             <version>${allure.version}</version>
             <exclusions>
                 <exclusion>
