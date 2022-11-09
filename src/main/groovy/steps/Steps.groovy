@@ -22,4 +22,17 @@ class Steps {
                 .get("${serviceUrl}/users")
     }
 
+    @Step("Get a post")
+    static Response getPost(int postId = 1) {
+        given()
+                .when()
+                .get("${serviceUrl}/posts/${postId}")
+    }
+
+    @Step("Get all posts")
+    static Response getPosts() {
+        given()
+                .when()
+                .get("${serviceUrl}/posts")
+    }
 }

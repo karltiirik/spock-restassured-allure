@@ -18,7 +18,7 @@ class UsersTest extends GenericSpecification {
     @Feature("/users/{}")
     @Story("Get a single user's data")
     @Description("Some detailed info")
-    def "Given: an existing user #name in queried; Then correct response is returned"() {
+    def "Given: user # exists; When: an existing user #name in queried; Then: correct response is returned"() {
         given: "user # name exists"
         when: "get user's data"
         Response response = Steps.getUserData(id)
@@ -40,7 +40,7 @@ class UsersTest extends GenericSpecification {
     @TmsLink("test-1")
     @Feature("/users")
     @Story("Get all user's data")
-    def "Given: all users are queried; Then all users are returned"() {
+    def "Given: users exist, When: all users are queried; Then: all users are returned"() {
         given: "10 users exist"
         when: "get all user's data"
         Response response = Steps.getUsersData()
