@@ -28,7 +28,7 @@ class PostsTest extends GenericSpecification {
     }
 
     @Feature("/posts")
-    @Story("Get all posts")
+    @Requirement("EXAMPLE")
     def "Given: posts exists; When: posts are queried; Then: all posts returned "() {
         given: "posts exists"
         when: "posts are queried"
