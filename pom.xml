@@ -20,7 +20,7 @@
         <spock.version>2.3-groovy-4.0</spock.version>
         <groovy.version>4.0.12</groovy.version>
         <rest-assured.version>5.2.0</rest-assured.version>
-        <allure.version>2.20.0</allure.version>
+        <allure.version>2.22.2</allure.version>
 
         <!-- Plugin versions -->
         <gmavenplus.plugin.version>3.0.0</gmavenplus.plugin.version>
