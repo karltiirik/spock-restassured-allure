@@ -39,6 +39,13 @@
             <type>pom</type>
         </dependency>
 
+        <!-- Spock -->
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>${spock.version}</version>
+        </dependency>
+
         <!-- Allure -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -50,13 +57,6 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
             <version>${allure.version}</version>
-        </dependency>
-
-        <!-- Spock -->
-        <dependency>
-            <groupId>org.spockframework</groupId>
-            <artifactId>spock-core</artifactId>
-            <version>${spock.version}</version>
         </dependency>
 
         <!-- Rest assured -->
