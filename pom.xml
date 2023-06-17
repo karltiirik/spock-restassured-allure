@@ -21,6 +21,7 @@
         <groovy.version>4.0.12</groovy.version>
         <rest-assured.version>5.3.0</rest-assured.version>
         <allure.version>2.22.2</allure.version>
+        <selenide.version>6.15.0</selenide.version>
 
         <!-- Plugin versions -->
         <gmavenplus.plugin.version>3.0.0</gmavenplus.plugin.version>
@@ -66,6 +67,18 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${rest-assured.version}</version>
+        </dependency>
+
+        <!-- Selenide -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-selenide</artifactId>
+            <version>${allure.version}</version>
         </dependency>
 
     </dependencies>
