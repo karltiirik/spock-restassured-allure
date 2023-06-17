@@ -40,6 +40,8 @@
         </dependency>
 
         <!-- Allure -->
+        <!-- allure-spock2 dependency MUST BE before spock-core dependency,
+        see https://github.com/allure-framework/allure-java/issues/928#issuecomment-1594596412 for explanation -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-spock2</artifactId>
