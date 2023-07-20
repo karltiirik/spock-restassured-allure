@@ -23,8 +23,17 @@ dependencies {
 allure {
     version.set("2.23.0")
     adapter {
-        frameworks {
-            spock
+        // AspectJ Weaver is fine, but make sure the latest available version is used
+        aspectjWeaver.set(true)
+        aspectjVersion.set("1.9.19")
+
+        // in order to disable dependencySubstitution (spi-off classifier)
+        autoconfigureListeners.set(true)
+
+        // disable auto-configuring dependencies
+        autoconfigure.set(false)
+        afterEvaluate {
+            frameworks.forEach { adapter -> adapter.enabled.set(false) }
         }
     }
 }
