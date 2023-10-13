@@ -18,7 +18,7 @@ class UsersTest extends GenericSpecification {
     @Feature("/users/{}")
     @Story("Get a single user's data")
     @Description("Some detailed info")
-    def "Given: user #name exists; When: an existing user #name in queried; Then: correct response is returned"() {
+    def "Given: user #name exists; When: an existing user #name is queried; Then: correct response is returned"() {
         given: "user #name exists"
         when: "get user's data"
         Response response = Steps.getUserData(id)
