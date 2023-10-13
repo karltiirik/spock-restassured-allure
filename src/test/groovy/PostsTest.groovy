@@ -1,6 +1,7 @@
 import io.qameta.allure.Epic
 import io.qameta.allure.Feature
 import io.qameta.allure.Link
+import io.qameta.allure.Step
 import io.qameta.allure.Story
 import io.restassured.response.Response
 import steps.Steps
@@ -10,6 +11,31 @@ import static org.hamcrest.Matchers.is
 @Link("https://jsonplaceholder.typicode.com/")
 @Epic("/posts")
 class PostsTest extends GenericSpecification {
+
+    def setupSpec() { // runs once -  before the first feature method
+        dummySetupStep()
+    }
+
+    def setup() { // runs before every feature method
+        dummySetupStep()
+    }
+
+    def cleanup() { // runs after every feature method
+        dummyCleanupStep()
+    }
+    def cleanupSpec() { // runs once -  after the last feature method
+        dummyCleanupStep()
+    }
+
+    @Step("DummySetupStep")
+    Boolean dummySetupStep() {
+        return true
+    }
+
+    @Step("DummyCleanupStep")
+    Boolean dummyCleanupStep() {
+        return true
+    }
 
     @Feature("/posts/{}")
     @Story("Get a post")
