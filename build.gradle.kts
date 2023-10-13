@@ -11,17 +11,17 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation("org.apache.groovy:groovy-all:4.0.13")
-    implementation("io.qameta.allure:allure-spock2:2.23.0")
-    implementation("io.qameta.allure:allure-rest-assured:2.23.0")
+    implementation("org.apache.groovy:groovy-all:4.0.15")
+    implementation("io.qameta.allure:allure-spock2:2.24.0")
+    implementation("io.qameta.allure:allure-rest-assured:2.24.0")
     implementation("org.spockframework:spock-core:2.3-groovy-4.0")
-    implementation("io.rest-assured:rest-assured:5.3.1")
-    implementation("com.codeborne:selenide:6.16.0")
-    implementation("io.qameta.allure:allure-selenide:2.23.0")
+    implementation("io.rest-assured:rest-assured:5.3.2")
+    implementation("com.codeborne:selenide:6.19.0")
+    implementation("io.qameta.allure:allure-selenide:2.24.0")
 }
 
 allure {
-    version.set("2.23.0")
+    version.set("2.24.0")
     adapter {
         // AspectJ Weaver is fine, but make sure the latest available version is used
         aspectjWeaver.set(true)
