@@ -18,7 +18,7 @@
 
         <!-- Dependency versions -->
         <spock.version>2.3-groovy-4.0</spock.version>
-        <groovy.version>4.0.13</groovy.version>
+        <groovy.version>4.0.17</groovy.version>
         <rest-assured.version>5.4.0</rest-assured.version>
         <allure.version>2.24.0</allure.version>
         <selenide.version>6.19.0</selenide.version>
