@@ -23,6 +23,12 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Get Chrome version
+        run: chrome --version
+
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
