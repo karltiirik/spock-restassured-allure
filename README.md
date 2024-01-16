@@ -25,3 +25,14 @@
 ```shell
 allure serve build/allure-results
 ```
+
+## Autotest TODO
+1. Run tests in Docker
+2. Generate report from test results
+    * either serve the report
+    * or generate an HTML
+3. Open report in a browser
+4. Diff with the expected image:
+   * either Applitools Eyes
+   * or expected images in repository (keep in mind dynamic parts)
+5. GitHub Actions pipeline
