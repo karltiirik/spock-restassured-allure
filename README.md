@@ -20,8 +20,7 @@
 ```
 
 ## Generating Allure report
-**NB! Allure needs to be available from the commandline**
 
 ```shell
-allure serve build/allure-results
+./gradlew allureServe
 ```
