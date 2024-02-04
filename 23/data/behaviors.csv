@@ -1,0 +1,6 @@
+"Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
+"","","","0","0","1","0","0"
+"/posts","/posts","EXAMPLE","0","0","1","0","0"
+"/users","/users/{}","Get a single user's data","0","0","3","0","0"
+"/posts","/posts/{}","Get a post","0","0","1","0","0"
+"/users","/users","Get all user's data","0","0","1","0","0"
