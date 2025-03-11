@@ -21,7 +21,7 @@
         <groovy.version>4.0.13</groovy.version>
         <rest-assured.version>5.4.0</rest-assured.version>
         <allure.version>2.24.0</allure.version>
-        <selenide.version>6.19.0</selenide.version>
+        <selenide.version>7.2.3</selenide.version>
 
         <!-- Plugin versions -->
         <gmavenplus.plugin.version>3.0.0</gmavenplus.plugin.version>
