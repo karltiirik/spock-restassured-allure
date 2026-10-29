@@ -4,16 +4,16 @@ import org.openqa.selenium.By
 import static com.codeborne.selenide.Selenide.$
 import static com.codeborne.selenide.Selenide.open
 
-class E2ETest extends GenericSpecification {
+class E2ETest extends Spec {
 
-    def "UI POC test"() {
-        given: "https://jsonplaceholder.typicode.com/ is opened"
-        open("https://jsonplaceholder.typicode.com/")
+	def "Guide title is 'JSONPlaceholder - Guide'"() {
+		given: "open '#url'"
+		open(url)
 
-        when: "user opens guide"
-        $(By.linkText("Guide")).click()
+		when: "click on 'Guide' link"
+		$(By.linkText("Guide")).click()
 
-        then: "Guide page is displayed"
-        $("title").shouldHave(Condition.attribute("text", "JSONPlaceholder - Guide"))
-    }
+		then: "page title is 'JSONPlaceholder - Guide'"
+		$("title").shouldHave(Condition.attribute("text", "JSONPlaceholder - Guide"))
+	}
 }

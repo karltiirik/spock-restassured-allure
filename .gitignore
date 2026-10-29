@@ -14,12 +14,16 @@ target/
 .settings/
 bin/
 
-# IDEA
+# IntelliJ IDEA
+.idea/*
 *.iws
 *.ipr
 *.iml
-.idea/
 out/
+!.idea/codeStyles/
 
 # Allure
 .allure/
+
+# Claude Code
+*.local.*

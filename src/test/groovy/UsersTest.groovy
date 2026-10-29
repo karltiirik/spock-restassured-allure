@@ -6,49 +6,52 @@ import io.qameta.allure.Link
 import io.qameta.allure.Story
 import io.qameta.allure.TmsLink
 import io.restassured.response.Response
-import steps.Steps
 
 import static org.hamcrest.Matchers.is
 
 @Link("https://jsonplaceholder.typicode.com/")
 @Epic("/users")
-class UsersTest extends GenericSpecification {
+class UsersTest extends Spec {
 
-    @Issue("123")
-    @Feature("/users/{}")
-    @Story("Get a single user's data")
-    @Description("Some detailed info")
-    def "Given: user #name exists; When: an existing user #name is queried; Then: correct response is returned"() {
-        given: "user #name exists"
-        when: "get user's data"
-        Response response = Steps.getUserData(id)
+	@Issue("123")
+	@Feature("/users/{}")
+	@Story("Get a single user's data")
+	@Description("Some detailed info")
+	def "Querying existing user #name returns 200 OK and user's info"() {
+		when: "GET /users/#id"
+		Map response = Steps
+				.getUsersById(id)
+				.then()
+				.statusCode(200)
+				.extract()
+				.as(Map.class)
 
-        then: "should 200 okay, response matching expected"
-        response.then()
-                .statusCode(200)
-                .body("id", is(id))
-                .body("name", is(name))
-                .body("company.name", is(companyName))
-        where:
-        id | name               | companyName
-        1  | "Leanne Graham"    | "Romaguera-Crona"
-        2  | "Ervin Howell"     | "Deckow-Crist"
-        3  | "Clementine Bauch" | "Romaguera-Jacobson"
-    }
+		then: "response is correct"
+		response["id"] == id
+		response["name"] == name
+		response["company"]["name"] == companyName
 
-    @Link(name = "MORE_INFO", url = "https://jsonplaceholder.typicode.com/guide/")
-    @TmsLink("test-1")
-    @Feature("/users")
-    @Story("Get all user's data")
-    def "Given: users exist, When: all users are queried; Then: all users are returned"() {
-        given: "10 users exist"
-        when: "get all user's data"
-        Response response = Steps.getUsersData()
+		where:
+		id | name               | companyName
+		1  | "Leanne Graham"    | "Romaguera-Crona"
+		2  | "Ervin Howell"     | "Deckow-Crist"
+		3  | "Clementine Bauch" | "Romaguera-Jacobson"
+	}
 
-        then: "should 200 okay, all users returned"
-        response.then()
-                .statusCode(200)
-                .body("size()", is(10))
-    }
+	@Link(name = "MORE_INFO", url = "https://jsonplaceholder.typicode.com/guide/")
+	@TmsLink("test-1")
+	@Feature("/users")
+	@Story("Get all user's data")
+	def "Querying all users returns JSON with 10 users"() {
+		when: "GET /users"
+		Response response = Steps
+				.getUsers()
+
+		then: "response status is 200 and 10 users are returned"
+		response
+				.then()
+				.statusCode(200)
+				.body("size()", is(10))
+	}
 
 }
